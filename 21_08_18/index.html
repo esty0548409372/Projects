@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<head>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+
+        #myTable {
+            margin-top: 186px;
+            margin-left: 11%;
+            width: 640px;
+            height: 480px;
+        }
+
+        .bg-table {
+            background: #ffd700;
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+            transition: all 0.2s ease-in-out;
+            color: #333;
+        }
+
+        table td {
+            border: 3px solid #ffd700;
+            width: 3rem;
+            height: 3rem;
+            vertical-align: middle;
+            text-align: center;
+            color: #ffd700;
+            cursor: pointer;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .animate {
+            transition: all 0.1s;
+            -webkit-transition: all 0.1s;
+        }
+
+        .action-button {
+            position: relative;
+            padding: 10px 40px;
+            margin: 0px 10px 10px 0px;
+            float: left;
+            border-radius: 10px;
+            font-family: 'Pacifico', cursive;
+            font-size: 25px;
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        .action-button:active {
+            transform: translate(0px, 5px);
+            -webkit-transform: translate(0px, 5px);
+            border-bottom: 1px solid;
+        }
+
+        .gold {
+            margin-top: 140px;
+            background-color: #ffd700;
+            border-bottom: 5px solid #ffd700;
+            text-shadow: 0px -2px #ffd700;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wraper" class="container  col-md-offset-4">
+        <div id="buttons" class="container ">
+            <button id="Upperpart" class="action-button shadow animate gold" onclick="ChooseButton(id)">Upper part</button>
+            <button id="Diagonals" class="action-button shadow animate gold" onclick="ChooseButton(id)">Diagonals</button>
+            <button id="Downpart" class="action-button shadow animate gold" onclick="ChooseButton(id)">Down part</button>
+            <button id="Border" class="action-button shadow animate gold" onclick="ChooseButton(id)">Border</button>
+        </div>
+
+        <main class="container ">
+            <h1 class="mt-heading">Matrix</h1>
+            <div class="mt-table-container"></div>
+        </main>
+    </div>
+</body>
+<script>
+    // 'use strict';
+
+    var MultiplicationTable = function () {
+        this.tableData = [];
+        this.highlightedCells = [];
+
+        this.createNewElement = function (el, className) {
+            var el = document.createElement(el);
+            el.classList.add(className);
+            return el;
+        }
+
+        this.distributeCells = function (table) {
+            for (var row = 1; row < 4; row++) {
+                var createRow = this.createNewElement('tr', 'mt-trow');
+                var trow = [];
+                for (var cell = 1; cell < 4; cell++) {
+                    var createCell = this.createNewElement('td', 'mt-tcell');
+                    createCell.dataset.row = row;
+                    createCell.dataset.cell = cell;
+                    createCell.innerHTML = row * cell;
+                    createRow.appendChild(createCell);
+                    trow.push(createCell);
+                    if (cell === row) {
+                        createCell.classList.add('is-square');
+                    }
+                }
+                this.tableData.push(trow);
+                table.appendChild(createRow);
+            }
+        }
+
+        this.createTable = function () {
+            var table = this.createNewElement('table', 'mt-table');
+            table.setAttribute('cellspacing', '0');
+            table.setAttribute('Id', 'myTable');
+            // table.setAttribute("class", 'col-md-4');
+            this.distributeCells(table);
+            return table;
+        }
+
+        this.render = function () {
+            var container = document.querySelector('.mt-table-container');
+            container.appendChild(this.createTable());
+        }
+
+
+        this.init = function () {
+            this.render();
+        }
+
+    };
+
+    var table = new MultiplicationTable();
+    table.init();
+    var arrayList = table.tableData;
+    function cleanTable() {
+        for (var i = 0; i < arrayList.length; i++) {
+            for (var j = 0; j < arrayList[i].length; j++) {
+                if (arrayList[i][j].classList.contains('bg-table'))
+                    arrayList[i][j].classList.remove('bg-table');
+            }
+        }
+    }
+    /*actions buttons*/
+    function ChooseButton(id) {
+        cleanTable();
+        for (var i = 0; i < arrayList.length; i++) {
+            for (var j = 0; j < arrayList[i].length; j++) {
+                switch (id) {
+                    case "Upperpart":
+                        if (j == i || i < j) {
+                            arrayList[i][j].classList.add('bg-table');
+                        }
+                        break;
+                    case "Diagonals":
+                        if (j == i || i + j == arrayList.length - 1) {
+                            arrayList[i][j].classList.add('bg-table');
+
+                        }
+                        break;
+                    case "Downpart":
+                        if (i == j || i > j) {
+                            arrayList[i][j].classList.add('bg-table');
+                        }
+                        break;
+                    case "Border":
+                        if (i == 0 || i == 2 || j == 0 || j == 2) {
+                            arrayList[i][j].classList.add('bg-table');
+                        }
+                        break;
+                }
+            }
+        }
+    }
+</script>
+
+</html>
