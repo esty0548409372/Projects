@@ -10,12 +10,14 @@ export class PackageListComponent{
 
   listPackage: any;
   constructor(private packageSrvice: PackagesService) {
-
+    
+ 
     this.packageSrvice.subject.subscribe(
       {
         next: (res: any) => this.listPackage = res
       }
     )
+    //add downloads to the list - get start and end date
     this.packageSrvice.subject2.subscribe(
       {
         next: (res: any) => {

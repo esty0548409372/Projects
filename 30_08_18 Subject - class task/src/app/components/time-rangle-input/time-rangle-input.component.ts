@@ -11,14 +11,16 @@ export class TimeRangleInputComponent {
   dateStart: any;
   dateEnd: any;
   arrDate: any;
+
   constructor(private packageSrvice: PackagesService) {
     this.arrDate = ["1950-01-01", "2050-01-01"];
+    
+    //return null if the name of package changed and not the date
     this.packageSrvice.subject3.subscribe(
       {
         next: () => this.dateCange(null)
       }
     );
-
   }
 
   dateCange(e) {
@@ -28,11 +30,5 @@ export class TimeRangleInputComponent {
       else this.arrDate[1] = e.target.value;
     }
     this.packageSrvice.subject2.next(this.arrDate);
-    // this.packageSrvice.getPackageByDate(this.arrDate).subscribe((res) =>
-    //   this.packageSrvice.subject2.next(res)
-    // )
   }
-
-
-
 }

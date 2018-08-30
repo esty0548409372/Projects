@@ -11,16 +11,14 @@ export class PackageInputComponent {
   constructor(private packageSrvice: PackagesService) { }
 
   listPakages: any;
-  ngOnInit() {
-  }
 
   onKeyPress(e) {
     this.packageSrvice.getPakcages(e.target.value).subscribe((res) => {
       this.packageSrvice.subject
         .next(res);
     });
-
   }
+  //when the name change and not the date
   changeNameOfPackage(){
     this.packageSrvice.subject3.next();
   }
