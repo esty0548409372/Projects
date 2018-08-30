@@ -1,0 +1,23 @@
+
+<input class="form-control" type="text" [(ngModel)]="input" name="input">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+
+      <th>NAME </th>
+      <th>NATIVNAME </th>
+      <th>Capital</th>
+      <th>Population</th>
+      <th>flag </th>
+    </tr>
+  </thead>
+  <tr *ngFor="let item of listCountries | myPipe:input">
+    <th>{{item.name }} </th>
+    <th>{{item.nativeName}} </th>
+    <th>{{item.capital}} </th>
+    <th>{{item.population}} </th>
+    <th>
+      <img style="width: 30px; height:30px;" src="{{item.flag}}">
+    </th>
+  </tr>
+</table>
