@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <form name="myForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+      <div class="input-group">
+        <label>Id</label>
+        <input type="text" formControlName="id" required minlength="9" maxlength="9" pattern="[0-9]+">
+        <span class="bar"></span>
+        <div *ngIf="id.invalid && (id.dirty || id.touched)" class="alert alert-danger">
+          <div *ngIf="id.errors.required">Id is required.</div>
+          <div *ngIf="id.errors.minlength || id.errors.maxlength">Id must be 9 characters long.</div>
+          <div *ngIf="id.errors.pattern">Id must contain only digits</div>
+          <div *ngIf="id.errors.validId ">The id isn't legal.</div>
+        </div>
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <i class="fa fa-user"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <input type="number" formControlName="age" required min="0" max="120" [min]="0" [max]="120">
+        <label>Age</label>
+        <span class="bar"></span>
+        <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+          <div *ngIf="age.errors.required">Age is required.</div>
+          <div *ngIf="age.errors.min">The age can't be under 0.</div>
+          <div *ngIf="age.errors.max">The age can't be up 120.</div>
+        </div>
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <i class="fa fa-envelope"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <input type="Name" formControlName="name" required minlength="3" maxlength="15" pattern="[a-zA-Zא-ת]+">
+        <label>Name</label>
+        <span class="bar"></span>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+          <div *ngIf="name.errors.required">Name is required.</div>
+          <div *ngIf="name.errors.minlength">The name can contain at least 3 characters.</div>
+          <div *ngIf="name.errors.maxlength">The name can't contain more then 15 characters.</div>
+          <div *ngIf="name.errors.pattern">The name must contain just letters</div>
+        </div>
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <i class="fa fa-envelope"></i>
+          </div>
+        </div>
+      </div>
+      <div class="input-group">
+        <label>Are you male</label>
+        <input type="checkbox" value="isMale" name="gender" ngModel formControlName="isMale">
+        <span class="bar"></span>
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <i class="fa fa-envelope"></i>
+          </div>
+        </div>
+      </div>
+      <div class="input-group">
+        <input type="Country" formControlName="country" required>
+        <label>Country</label>
+        <span class="bar"></span>
+        <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert alert-danger">
+          <div *ngIf="country.errors.required">Country is required.</div>
+          <div *ngIf="country.errors.validCountry">Country isn't exists.</div>
+        </div>
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <i class="fa fa-envelope"></i>
+          </div>
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+      <!-- [disable]="!registerForm.valid"] -->
+    </form>
+  </div>
+</body>
