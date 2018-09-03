@@ -1,0 +1,12 @@
+<div class="container" style="background-color:aquamarine">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <a routerLink="/account/login" style="padding-bottom: 20px; padding-top: 20px;" class="mat-icon material-icons">login </a>
+      <a routerLink="/account/register" style="padding-bottom: 20px; padding-top: 20px;" class="mat-icon material-icons"> register </a>
+      <button (click)="logout()" *ngIf="currentUser" style="padding-bottom: 20px; padding-top: 20px;" class="mat-icon material-icons">
+      logout </button>
+
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

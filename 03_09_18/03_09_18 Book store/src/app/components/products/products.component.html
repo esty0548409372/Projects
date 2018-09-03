@@ -1,0 +1,9 @@
+<p>
+  products works!
+</p>
+
+<input type="text" (keyup)="filterListBook($event)">
+
+<tr *ngFor="let book of listProducts">
+  <app-product-preview [book]="book"></app-product-preview>
+</tr>
