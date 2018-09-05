@@ -9,12 +9,12 @@ import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router
 })
 export class ProductsDetailsComponent implements OnInit {
   book: any;
-  userLogin:any;
-  localStorage=localStorage;
-  constructor(private bookService: BookService, private activeRouter: ActivatedRoute,private router:Router) {
+  userLogin: any;
+  localStorage = localStorage;
+  constructor(private bookService: BookService, private activeRouter: ActivatedRoute, private router: Router) {
     //chek if has user in login
-    this.userLogin=JSON.parse(localStorage.getItem("currentUser"));
-   }
+    this.userLogin = JSON.parse(localStorage.getItem("currentUser"));
+  }
 
   ngOnInit() {
     this.activeRouter.params.forEach(p => {
@@ -23,10 +23,7 @@ export class ProductsDetailsComponent implements OnInit {
     }
     );
   }
-  // backToList(){
-  //   this.router.navigate(['/products']);
-  // }
-  addToCart(){
+  addToCart() {
     this.bookService.addToCart(this.book);
   }
 

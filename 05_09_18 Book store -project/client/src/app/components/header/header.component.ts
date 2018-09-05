@@ -7,20 +7,11 @@ import { UserService } from '../../shard/services/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  currentUser: boolean = false;
   localStorage = localStorage;
   json = JSON;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    //if show my cart
-    this.userService.subjectMyCart.subscribe(
-      {
-        next: () => {
-          if (localStorage.getItem('currentUser'))
-            this.currentUser = true;
-        }
-      }
-    )
+
   }
 }

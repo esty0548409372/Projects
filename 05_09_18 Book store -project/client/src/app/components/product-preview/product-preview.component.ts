@@ -28,6 +28,6 @@ export class ProductPreviewComponent implements OnInit {
     localStorage.setItem("productsList", JSON.stringify(currentList));
   }
   openDetails(){
-    this.router.navigate(['/productsDetails',this.book.volumeInfo]);
+    this.router.navigate(['/bookStore/productsDetails',this.book.volumeInfo]);
   }
 }

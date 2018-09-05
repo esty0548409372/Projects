@@ -11,7 +11,7 @@
 
   </div>
   <div class="product-image">
-    <img src="https://sc01.alicdn.com/kf/HTB1Cic9HFXXXXbZXpXXq6xXFXXX3/200006212/HTB1Cic9HFXXXXbZXpXXq6xXFXXX3.jpg" alt="Omar Dsoky">
+    <img src="{{book['volumeInfo'].imageLinks['smallThumbnail']}}" alt="Omar Dsoky">
 
     <!-- 	product Information-->
     <div class="info">
@@ -28,9 +28,8 @@
     </div>
   </div>
   <!--  End product image  -->
-  <a routerLink="/products" class="nav-link" *ngIf="localStorage.getItem('currentUser')" style="padding-bottom: 20px; padding-top: 20px;"
+  <a routerLink="/bookStore/products" class="nav-link" *ngIf="localStorage.getItem('currentUser')" style="padding-bottom: 20px; padding-top: 20px;"
   class="mat-icon material-icons">
   Back to list </a> 
-   <!-- <button class="btn btn-success" (click)="backToList()">Back to list</button> -->
 
 </div>

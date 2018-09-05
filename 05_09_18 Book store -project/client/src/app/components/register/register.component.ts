@@ -34,7 +34,7 @@ export class RegisterComponent {
     this.error = "";
     this.userService.addUser(this.formGroup.value).subscribe(
       data => {
-        this.router.navigate(["/account/login"]);
+        this.router.navigate(["/bookStore/account/login"]);
       }, err => {
         this.error = "please change your pass or user name,it's exist";
       }

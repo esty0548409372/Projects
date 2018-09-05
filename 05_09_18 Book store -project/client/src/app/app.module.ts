@@ -22,20 +22,20 @@ import { AuthGuard } from './shard/auth.guard';
 import { User } from './shard/models/user';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'myCart', component: CartComponent ,canActivate: [AuthGuard]},
-  { path: 'home', component: HomeComponent },
+  { path: 'bookStore', component: HomeComponent },
+  { path: 'bookStore/products', component: ProductsComponent },
+  { path: 'bookStore/myCart', component: CartComponent ,canActivate: [AuthGuard]},
+  { path: 'bookStore/home', component: HomeComponent },
   {
-    path: 'account', component: AccountComponent, children: [
+    path: 'bookStore/account', component: AccountComponent, children: [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'logout', component: LogoutComponent },
       // { path: 'logout', component:LoginComponent },
     ]
   },
-  {path:'productsDetails',component:ProductsDetailsComponent},
-  {path:'productPreview',component:ProductPreviewComponent},
+  {path:'bookStore/productsDetails',component:ProductsDetailsComponent},
+  {path:'bookStore/productPreview',component:ProductPreviewComponent},
 
 ];
 

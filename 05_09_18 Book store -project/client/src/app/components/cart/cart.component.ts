@@ -9,7 +9,7 @@ import { BookService } from '../../shard/services/book.service';
 export class CartComponent implements OnInit {
   myCart: any = [];
   productsList: any = []
-  localStorage = localStorage;
+
   constructor(private bookService: BookService) {
 
   }

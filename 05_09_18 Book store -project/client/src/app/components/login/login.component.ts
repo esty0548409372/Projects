@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, FormControl, ValidatorFn } from '@angular/forms';
+import { Router } from '@angular/router';
+import {  FormGroup, FormControl, ValidatorFn } from '@angular/forms';
 import { UserService } from '../../shard/services/user.service';
-import { BookService } from '../../shard/services/book.service';
 
 @Component({
   selector: 'app-login',
@@ -42,8 +41,7 @@ export class LoginComponent implements OnInit {
         .subscribe(
           data => {
             localStorage.setItem('currentUser', JSON.stringify({ data }));
-            this.userService.subjectMyCart.next();
-            this.router.navigate(["/products"]);
+            this.router.navigate(["/bookStore/products"]);
           }, err => {
             this.error = "user name or password are not ok";
             this.isRegister = true;

@@ -1,31 +1,11 @@
-<!-- 
-<div class="item  col-xs-4 col-md-3">
-  <div class="thumbnail">
-    <img class="group list-group-image" src="//images.ctfassets.net/55tpbg0qcsp4/4Dv5jfCu1G0oA0K2mw62Ci/f990173542acb54b8af9156f20b3f959/weather_words_1000x700.jpg?w=284&h=240"
-      alt="" />
-    <div class="category">
-      <h5 class="category-name">{{book['volumeInfo'].title}}</h5>
-    </div>
-    <div class="caption">
-      <h4 class="group inner list-group-item-heading">
-        Book
-      </h4>
 
-      <div class="row">
-        <div class="btn-group">
-          <button class="btn btn-success" (click)="openDetails()">Details</button>
-          <button class="btn btn-success" *ngIf="userLogin" (click)="addToCart()">Add to cart</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 <ul class='list-inline' style="padding-left: 20%;padding-bottom: 20%;">
   <li id="myBook" class='book' style="padding-left: 20%;padding-bottom: 20%;">
       <button class="btn btn-success" (click)="openDetails()">Details</button>
       <!-- <button class="btn btn-success" *ngIf="userLogin" (click)="addToCart()">Add to cart</button> -->
     <h5 class="category-name">{{book['volumeInfo'].title}}</h5>
-    <img id="imgBook" src="//images.ctfassets.net/55tpbg0qcsp4/4Dv5jfCu1G0oA0K2mw62Ci/f990173542acb54b8af9156f20b3f959/weather_words_1000x700.jpg?w=284&h=240">
-    <!-- <img  src="{{book['volumeInfo'].imageLinks['smallThumbnail']}}" /> -->
+    
+    <!-- <img id="imgBook" src="//images.ctfassets.net/55tpbg0qcsp4/4Dv5jfCu1G0oA0K2mw62Ci/f990173542acb54b8af9156f20b3f959/weather_words_1000x700.jpg?w=284&h=240"> -->
+    <img  id="imgBook" src="{{book['volumeInfo'].imageLinks['smallThumbnail']}}" />
   </li>
 </ul>

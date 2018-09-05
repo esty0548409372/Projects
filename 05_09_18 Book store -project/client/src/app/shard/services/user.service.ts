@@ -8,16 +8,16 @@ import { Subject } from 'rxjs';
 export class UserService {
   loginItems: any = [];
     //can enter to cart if has user in login
-  subjectMyCart=new Subject();
+  // subjectMyCart=new Subject();
   constructor(private http: HttpClient) { }
 
   addUser(newUser: any) {
-    return this.http.post("http://localhost:3500/api/registerBookStore", newUser);
+    return this.http.post("https://pacific-ocean-68665.herokuapp.com/api/registerBookStore", newUser);
   }
 
   login(newLogin: any) {
     //check if login successful 
-    return this.http.post("http://localhost:3500/api/loginBookStore", JSON.parse(JSON.stringify(newLogin)))
+    return this.http.post("https://pacific-ocean-68665.herokuapp.com/api/loginBookStore", JSON.parse(JSON.stringify(newLogin)))
   }
 
   logout() {
