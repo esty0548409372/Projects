@@ -1,0 +1,15 @@
+
+.book[_ngcontent-c5] {
+  cursor: pointer;
+  display: block;
+  width: 208px;
+  height: 280px;
+  position: relative;
+  background: white;
+  z-index: 1;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 9px 20px 0 rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: box-shadow .3s linear;
+  padding-bottom: 20%;
+  padding-left: 20%;
+}

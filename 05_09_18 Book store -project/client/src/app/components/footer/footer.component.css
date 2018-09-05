@@ -1,0 +1,17 @@
+
+div{
+    background-color: orange;
+    height: 9vh;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+}
+p{
+    color: black;
+    text-align: center;
+    font-size: 3vh;
+    margin-top: 3vh;
+}

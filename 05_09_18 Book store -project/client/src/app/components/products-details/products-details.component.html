@@ -1,0 +1,36 @@
+
+<div id="container">
+  <div class="product-details">
+    <h1>Title</h1>
+    <!-- The most important information about the product -->
+    <p class="information">{{book.title}}</p>
+    <i class="fa fa-shopping-cart cart-icon"></i>
+    <div class="control">
+      <button class="btn btn-success" *ngIf="userLogin" (click)="addToCart()">Add to cart</button>
+    </div>
+
+  </div>
+  <div class="product-image">
+    <img src="https://sc01.alicdn.com/kf/HTB1Cic9HFXXXXbZXpXXq6xXFXXX3/200006212/HTB1Cic9HFXXXXbZXpXXq6xXFXXX3.jpg" alt="Omar Dsoky">
+
+    <!-- 	product Information-->
+    <div class="info">
+      <h2>The Description</h2>
+      <ul>
+        <li><strong>Title:</strong>{{book.title}}</li>
+        <li><strong>Subtitle: </strong>{{book.subtitle}}</li>
+        <li><strong>Publisher: </strong>{{book.publisher}}</li>
+        <li><strong>Authors: </strong>{{book.authors}}</li>
+        <li><strong>PublishedDate: </strong>{{book.publishedDate}}</li>
+        <li><strong>Description“: </strong>{{book.description}}</li>
+        <li><strong>PageCount: </strong>{{book.pageCount}}</li>
+      </ul>
+    </div>
+  </div>
+  <!--  End product image  -->
+  <a routerLink="/products" class="nav-link" *ngIf="localStorage.getItem('currentUser')" style="padding-bottom: 20px; padding-top: 20px;"
+  class="mat-icon material-icons">
+  Back to list </a> 
+   <!-- <button class="btn btn-success" (click)="backToList()">Back to list</button> -->
+
+</div>

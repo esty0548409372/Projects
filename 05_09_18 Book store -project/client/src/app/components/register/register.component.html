@@ -1,0 +1,37 @@
+<!-- <h2>Register</h2>
+<form [formGroup]="formGroup" (ngSubmit)="submitRegister()">
+
+    <div *ngFor="let x of obj.keys(formGroup.controls)">
+        <label>{{x}}:</label>
+        <input formControlName="{{x}}" />
+
+        <div *ngIf="formGroup.controls[x].errors">
+            <p *ngFor="let err of obj.values(formGroup.controls[x].errors)">{{err}}</p>
+        </div>
+    </div>
+    <p>{{error}}</p>
+    <input type="submit" value="Login" [disabled]="formGroup.invalid" />
+</form> -->
+
+<div class="container">
+    <div class="card card-container">
+        <form [formGroup]="formGroup" (ngSubmit)="submitRegister()">
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <h2>Register</h2>
+            <div *ngFor="let x of obj.keys(formGroup.controls)">
+                <label>{{x}}:</label>
+                <input class="form-control" formControlName="{{x}}" />
+                <div *ngIf="formGroup.controls[x].errors&&formGroup.controls[x].touched">
+                    <p class="alert alert-danger" *ngFor="let err of obj.values(formGroup.controls[x].errors)">{{err}}</p>
+                </div>
+            </div>
+            <p id="profile-name" class="profile-name-card"></p>
+            <span id="reauth-email" class="reauth-email"></span>
+            <p *ngIf="error!=''" class="alert alert-danger">{{error}}</p>
+            <!-- <input class="btn btn-lg btn-primary btn-block btn-signin" type="submit" value="Login" [disabled]="formGroup.invalid" /> -->
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" [disabled]="formGroup.invalid">Sign
+                in
+            </button>
+        </form>
+    </div><!-- /card-container -->
+</div><!-- /container -->

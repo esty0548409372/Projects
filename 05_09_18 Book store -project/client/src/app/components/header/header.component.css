@@ -1,0 +1,131 @@
+body {
+    margin: 0 auto;
+  }
+  
+  hr {
+    margin: 0 auto;
+    border: 2px solid black;
+  }
+  
+  #nav {
+    padding-bottom: 60px;
+    padding-right: 20px;
+    position: relative;
+    z-index: 1;
+    border-bottom: 10px solid black;
+    border-top: 2px solid black;
+    transition: all 0.2s ease;
+  }
+  
+  #nav p {
+    margin: 0 auto;
+    transition: all 0.2s ease;
+  }
+  
+  #nav .logo {
+    font-family: sans-serif;
+    float: left;
+    padding: 13px;
+  }
+  
+  #nav a {
+    float: right;
+    text-decoration: none;
+    color: black;
+    padding-top: 17px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 24px;
+    font-family: sans-serif;
+    transition: all 0.2s ease;
+    border-bottom: 0px solid black;
+    border-top: 0px solid black;
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+  }
+  
+  #nav a:hover {
+    border-top: 10px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    bottom: -4px;
+    padding-top: 17px;
+    padding-bottom: 13px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 24px;
+  }
+  
+  #nav a:active {
+    background: black;
+    color: white;
+    bottom: 0px;
+  }
+  #nav p:hover {
+    font-size: 35px;
+  }
+
+
+
+
+  .navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
+#userPicture{
+  width: 50px;
+  float: left;
+}
+.navbar{
+  border-bottom: 4px solid black;
+  background: #f1f1f1;
+  position: fixed!important;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  height: 18%;
+}
+li{
+  font-family: fantasy;
+  color: #fec400;
+  font-size: xx-large;
+  margin-top: 14%;
+  
+ 
+}
+
+.nav-item::after{content:'';display:block;width:0px;height:2px;background:#fec400;transition: 0.2s;}
+.nav-item:hover::after{width:100%;}
+.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link,.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{color:#fec400;}
+.nav-link{padding:15px 5px;transition:0.2s;  color: #fec400;}
+
+
+
+img{
+  border-radius: 50%;
+  width: 91px;
+}
+#logoImage{
+  width: 18%;
+}
+#profile-img{
+  margin-top: -38%;
+}
+
+
+ 

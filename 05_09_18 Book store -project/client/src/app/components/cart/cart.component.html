@@ -1,0 +1,10 @@
+<div *ngIf="productsList">
+  <div *ngFor="let book of productsList">
+    <app-card-product [book]="book"></app-card-product>
+  </div>
+</div>
+
+<!-- <div *ngIf="!productsList==[]">
+  <p>The cart is empty</p>
+  <div class="cartEmptyImg"></div>
+</div> -->

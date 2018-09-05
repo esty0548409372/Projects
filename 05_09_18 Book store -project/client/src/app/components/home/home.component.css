@@ -1,0 +1,12 @@
+body{
+    background-image: url("https://c1.staticflickr.com/9/8078/8314929977_4d7e817d68_h.jpg");
+}
+h1{
+    font-size: 36px;
+    margin-top: 10%;
+}
+p{
+    position: absolute;
+    margin: 0 0 10px;
+    margin-top: 36%;
+}
