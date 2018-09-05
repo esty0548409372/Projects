@@ -16,7 +16,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.productsList = this.bookService.getCurrentList();
-    // this.myCart = JSON.parse(localStorage.getItem("productsList"));
 
     //remove from cart
     this.bookService.subject.subscribe(

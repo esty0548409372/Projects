@@ -24,18 +24,18 @@ import { User } from './shard/models/user';
 const appRoutes: Routes = [
   { path: 'bookStore', component: HomeComponent },
   { path: 'bookStore/products', component: ProductsComponent },
-  { path: 'bookStore/myCart', component: CartComponent ,canActivate: [AuthGuard]},
+  { path: 'bookStore/myCart', component: CartComponent, canActivate: [AuthGuard] },
   { path: 'bookStore/home', component: HomeComponent },
   {
     path: 'bookStore/account', component: AccountComponent, children: [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'logout', component: LogoutComponent },
-      // { path: 'logout', component:LoginComponent },
     ]
   },
-  {path:'bookStore/productsDetails',component:ProductsDetailsComponent},
-  {path:'bookStore/productPreview',component:ProductPreviewComponent},
+  { path: 'bookStore/productsDetails', component: ProductsDetailsComponent },
+  { path: 'bookStore/productPreview', component: ProductPreviewComponent },
+  { path: '**', redirectTo: '/bookStore/home' },
 
 ];
 
@@ -64,7 +64,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [ AuthenticationService,User],
+  providers: [AuthenticationService, User],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

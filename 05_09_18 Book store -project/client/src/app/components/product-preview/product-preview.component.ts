@@ -17,10 +17,6 @@ export class ProductPreviewComponent implements OnInit {
 
   ngOnInit() { }
 
-  // getCurrentList() {
-  //   let list = localStorage.getItem("productsList");  //if "productsList" does not exist in the local storage we will get null
-  //   return (list) ? JSON.parse(list) : [];
-  // }
 
   addToCart() {
     let currentList = this.bookService.getCurrentList();

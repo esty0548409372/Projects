@@ -8,7 +8,6 @@ import { Subject } from 'rxjs';
 export class UserService {
   loginItems: any = [];
     //can enter to cart if has user in login
-  // subjectMyCart=new Subject();
   constructor(private http: HttpClient) { }
 
   addUser(newUser: any) {
