@@ -11,14 +11,13 @@ export class ProductsDetailsComponent implements OnInit {
   book: any;
   userLogin: any;
   localStorage = localStorage;
-  constructor(private bookService: BookService, private activeRouter: ActivatedRoute, private router: Router) {
+  constructor(private bookService: BookService, private activeRouter: ActivatedRoute) {
     //chek if has user in login
     this.userLogin = JSON.parse(localStorage.getItem("currentUser"));
   }
 
   ngOnInit() {
     this.activeRouter.params.forEach(p => {
-      console.log(p);
       this.book = p
     }
     );
