@@ -15,17 +15,18 @@ function addUserRoutes(app) {
         })
     });
     app.post("/login", function (request, response) {
-        models.User.d({ password: request.body.password, userName: request.body.userNamename }, (err, users) => {
-            console.log(request.body);
-            var token = jwt.sign(request.body, 'my secret');
-            console.log(token);
-            // var decoded = jwt.verify(token, 'my secret');
-            // console.log('decoded', decoded);
+        models.User.findOne({ password: request.body.password, userName: request.body.userNamename }, (err, users) => {
+            if (users) {
+                console.log(request.body);
+                var token = jwt.sign(request.body, 'my secret');
+                console.log(token);
+                // var decoded = jwt.verify(token, 'my secret');
+                // console.log('decoded', decoded);
+            }
+            else
+                response.send(404);
         })
-
     });
-
-
 }
 module.exports = { addUserRoutes };
 // curl -v -X POST -H "Content-type: application/json" -d "{\"userName\":\"test\",\"password\":\"1234\"}" http://localhost:3000/login
